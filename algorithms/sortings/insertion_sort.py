@@ -6,7 +6,7 @@ class InsertionSort(Sort):
     def __init__(self, list):
         super().__init__(list)
 
-    def sort(self):
+    def sort(self, key="increasing"):
 
         for i in range(1, self.length):
             
@@ -14,7 +14,7 @@ class InsertionSort(Sort):
 
             j = i - 1
 
-            while j >= 0 and self.list[j] > k:
+            while j >= 0 and (self.list[j] > k if key == "increasing" else self.list[j] < k):
                 self.list[j + 1] = self.list[j]
                 j -= 1
 
@@ -23,4 +23,5 @@ class InsertionSort(Sort):
         return self.list
 
 a_list = [5,2,4,6,1,3]
-print(InsertionSort(a_list).sort())
+print(InsertionSort(a_list).sort(key="increasing"))
+print(InsertionSort(a_list).sort(key="decreasing"))
