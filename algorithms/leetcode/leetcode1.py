@@ -1,6 +1,7 @@
-'''
+"""
 This code is for solution to leetcode 1 when the input array is sorted.
-'''
+"""
+
 def two_sum(nums: list, target: int)-> list[int]:
 
     '''
