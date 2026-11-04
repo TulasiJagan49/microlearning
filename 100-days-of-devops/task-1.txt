@@ -1,0 +1,13 @@
+# Beginning with KodeKloud 100 days of Devops for practice.
+
+# Task - Create a new Linux user with a non-interactive/disabled
+# shell on a target application server.
+
+# Connect to the server using jump server
+ssh tony@stapp01
+
+# Create a user with no shell access
+sudo useradd -s /sbin/nologin javed
+
+# Check if the user exists with proper shell access assigned
+cat /etc/passwd | grep javed
