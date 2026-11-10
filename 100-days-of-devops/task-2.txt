@@ -1,0 +1,13 @@
+# Create an user on the system with temporary access control via expiry date
+
+# Connect to the server using jump server
+ssh tony@stapp01
+
+# Task command
+sudo useradd -e 2027-02-14 heisenberg
+
+# Verification command
+sudo chage -l heisenberg
+
+# change age command is used to view and modify password expiry and account
+# aging policies.
