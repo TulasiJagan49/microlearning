@@ -1,0 +1,16 @@
+# Disable direct remote root login to enforce the principle of
+# least privilege and improve server security.
+
+# Connect to the server using jump server
+ssh banner@stapp03
+
+# Task command
+sudo vi /etc/ssh/sshd_config
+
+# Change this line from PermitRootLogin Yes to No in the
+# file. And, then save and close. After that run this
+# command:
+sudo systemctl restart sshd
+
+# Verification command
+sudo sshd -T | grep -i PermitRootLogin
