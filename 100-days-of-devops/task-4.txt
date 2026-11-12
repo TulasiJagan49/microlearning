@@ -1,0 +1,22 @@
+# Script Execution Permissions
+
+# Connect to the server using jump server
+ssh steve@stapp02
+
+# cd - change directory to /tmp 
+cd /tmp
+
+# ls -l to see the current permissions info
+
+# Everyone should have execute permissions
+sudo chmod a+rx xfusioncorp.sh
+
+# We needed to enable read access, as well, because
+# shell scripts might #!/bin/bash line at the top
+# of the file, and when the kernel reads it, it launches
+# a interpreter instead. This requires read access. If it
+# is an executable file, just execute permission would have
+# sufficed.
+
+# Make sure you had the permissions enabled again with
+ls -l
