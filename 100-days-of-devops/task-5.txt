@@ -1,0 +1,14 @@
+# SELinux Installation and Configuration
+
+# Connect to the server using jump server
+ssh banner@stapp03
+
+# Install SELinu packages
+sudo dnf install selinux-policy selinux-policy-targeted policycoreutils
+
+# Change the Configuration to disable it
+sudo vi /etc/selinux/config
+SELINUX=disabled
+
+# Verify the configuration with
+grep ^SELINUX= /etc/selinux/config
