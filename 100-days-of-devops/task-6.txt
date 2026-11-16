@@ -1,0 +1,20 @@
+# Creating a Cron Job across multiple servers
+
+# ssh in to any one server
+ssh tony@stapp01
+
+# Install cronie package
+sudo dnf install cronie
+
+# Start and enable the cron job service
+sudo systemctl start crond
+sudo systemctl enable crond
+
+# Add the cronjob details by running this command 
+sudo crontab -e
+
+# Verify by these commands
+sudo systemctl status crond # Check to see if the service has started
+sudo crontab -l # To see existing crontab details
+
+# Make sure to run these commands on the other two servers.
