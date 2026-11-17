@@ -1,0 +1,16 @@
+# Linux SSH Authentication
+
+# Generate SSH key pair on jump host
+ssh-keygen -t rsa
+# Press Enter through all prompts to accept default
+# file path and leave the paraphrase empty
+
+# Copy the public key to App servers
+ssh-copy-id tony@stapp01
+# Type yes to trust the host fingerprint
+
+# Verify passwordless access by connecting to each
+# server
+ssh tony@stapp01
+
+# This should be repeated for all other servers, as well.
