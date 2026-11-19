@@ -1,0 +1,17 @@
+# Installing ansible globally on jump server
+
+# Check python and pip are available
+python3 --version
+pip3 --version
+
+# Install the exact Ansible version globally
+sudo pip3 install ansible==4.7.0
+# We should sudo, so the library is installed in root
+# folder, providing access to all users
+
+# Verify the installation
+which ansible
+ansible --version
+
+# Test accessibility for other users
+sudo -u nobody ansilbe --version
